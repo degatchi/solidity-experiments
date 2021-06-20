@@ -37,10 +37,10 @@ Tested what the most efficient way to do the `bool&&()` trick is.
 
 <br />
 
-### `terinaryIfsAndElses.sol`
+### `ternaryIfsAndElses.sol`
 Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if` <br />
 Suprising gas results:<br />
-    Terniary: 26122<br />
+    Ternary: 26122<br />
     if, else: 26201<br />
     if, else if: 26157
     
@@ -59,3 +59,9 @@ Tested whether: `converting a bytes20 param to an address and assigning with tha
 Small difference, but still suprising results: <br />
 byes20 param: 26,360 <br />
 address param: 26,391 <br />
+
+<br />
+
+### `ternaryVsIf.sol`
+Testing whether: using a ternary is more efficient than a single if statement. <br />
+Results: Ternary wins by being more compact and being ever so slightly less in gas (Ternary: 29,004 && If: 29,021)
