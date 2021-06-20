@@ -28,8 +28,8 @@ however saves gas and is more compact.
 <br />
 
 ### `terinaryIfsAndElses`
-Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if`
-Suprising gas results:
-    Terniary: 26122
-    if, else: 26201
+Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if` <br />
+Suprising gas results:<br />
+    Terniary: 26122<br />
+    if, else: 26201<br />
     if, else if: 26157
