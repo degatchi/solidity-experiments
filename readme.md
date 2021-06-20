@@ -2,7 +2,7 @@ Experimental contracts that try to break Solidity and find new techniques.
 
 ----
 
-### `gasTester`
+### `gasTester.sol`
 Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `gasleft()`s
 
 # Findings
@@ -34,7 +34,7 @@ Tested what the most efficient way to do the `bool&&()` trick is.
 
 <br />
 
-### `terinaryIfsAndElses`
+### `terinaryIfsAndElses.sol`
 Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if` <br />
 Suprising gas results:<br />
     Terniary: 26122<br />
@@ -43,9 +43,16 @@ Suprising gas results:<br />
     
 <br />
 
-### `paramOrHardcode`
+### `paramOrHardcode.sol`
 Tested whether using the param to set a variable would be cheaper in gas compared to setting it manually. The results were staggering. <br />
 Test1 (manual): 45,942 <br />
 Test2 (param): 28,970 <br />
 
 <br />
+
+### `bytes20vsAddress.sol`
+Tested whether: `converting a bytes20 param to an address and assigning with that value` is cheaper than: `using an address param and assigning with that value`.
+<br/>
+Small difference, but still suprising results: <br />
+byes20 param: 26,360 <br />
+address param: 26,391 <br />
