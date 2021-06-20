@@ -40,3 +40,12 @@ Suprising gas results:<br />
     Terniary: 26122<br />
     if, else: 26201<br />
     if, else if: 26157
+    
+<br />
+
+### `paramOrHardcode`
+Tested whether using the param to set a variable would be cheaper in gas compared to setting it manually. The results were staggering. <br />
+Test1 (manual): 45,942 <br />
+Test2 (param): 28,970 <br />
+
+<br />
