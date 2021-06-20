@@ -10,14 +10,14 @@ contract Test {
     // testing if having a param that isn't used uses a lot of gas
     // compared to if it didn't have that param.
     
-    function test(bool choice) public {
+    function test1(bool choice) public {
         uint gasStart = gasleft();
         if (choice) {}
         uint gasUsed = gasStart = gasleft();
         emit GasUsed('test1', gasUsed);
     }
     
-    function test(address to, bool choice) public {
+    function test2(address to, bool choice) public {
         uint gasStart = gasleft();
         if (choice) {
             user = to;
