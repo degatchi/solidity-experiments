@@ -27,6 +27,13 @@ however saves gas and is more compact.
 
 <br />
 
+### `bool&&()Efficiency.sol`
+Tested what the most efficient way to do the `bool&&()` trick is.
+`test`: 26471
+`test2`: 26190
+
+<br />
+
 ### `terinaryIfsAndElses`
 Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if` <br />
 Suprising gas results:<br />
