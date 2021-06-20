@@ -26,3 +26,10 @@ is the same as
 however saves gas and is more compact. 
 
 <br />
+
+### `terinaryIfsAndElses`
+Tested whether `terinary operators (? :)` are worth using instead of `if, else` && `if, else if`
+Suprising gas results:
+    Terniary: 26122
+    if, else: 26201
+    if, else if: 26157
