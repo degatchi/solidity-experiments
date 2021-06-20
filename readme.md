@@ -8,6 +8,9 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 # Useful Information
 - https://ethereum.stackexchange.com/questions/37549/array-or-mapping-which-costs-more-gas
 
+# Notes
+- Clearing `address` variales in code: use `address(bytes20(''));`, this will set the address to `0x0000000000000000000000000000000000000000`. The reason we do this is because when you have an `address` or `bytes20` param, you are forced to input an address. However, you can set it with `address(bytes20(''));` within the code.
+
 # Findings
 ### `bytesToAddress.sol`
 To convert bytes to address, we used `bytes20(example_address)` and to convert back we use `address(bytes20_result)`. The reason why is because the `address` type is *20 bytes*, not *32 bytes*. Even with a `bytes32` conversion (`address(uint160(bytes20(bytes32Address))`), it doesn't come out as the original.
