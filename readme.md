@@ -7,6 +7,7 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 
 # Useful Information
 - https://ethereum.stackexchange.com/questions/37549/array-or-mapping-which-costs-more-gas
+- https://ethereum.stackexchange.com/questions/77099/efficient-bit-packing
 
 # Notes
 - Clearing `address` variales in code: use `address(bytes20(''));`, this will set the address to `0x0000000000000000000000000000000000000000`. The reason we do this is because when you have an `address` or `bytes20` param, you are forced to input an address. However, you can set it with `address(bytes20(''));` within the code.
