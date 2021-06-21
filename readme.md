@@ -5,12 +5,29 @@ Experimental contracts that try to break Solidity and find new techniques.
 ### `gasTester.sol`
 Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `gasleft()`s
 
+<br />
+
 # Useful Information
 - https://ethereum.stackexchange.com/questions/37549/array-or-mapping-which-costs-more-gas
 - https://ethereum.stackexchange.com/questions/77099/efficient-bit-packing
 
+<br />
+
 # Notes
 - Clearing `address` variales in code: use `address(bytes20(''));`, this will set the address to `0x0000000000000000000000000000000000000000`. The reason we do this is because when you have an `address` or `bytes20` param, you are forced to input an address. However, you can set it with `address(bytes20(''));` within the code.
+
+<br />
+
+# Bytes of Types
+To reduce gas costs, Solidity tightly packs variables where possible so that they are stored within the same 32 bytes. <br/>
+<br />
+Key:
+`bool`: 1 byte (8 bits) <br />
+`address`: 20 bytes <br />
+`uint8`: 1 bytes <br />
+`uint256`: 32 bytes (uint8 * 32) <br />
+
+<br />
 
 # Findings
 ### `bytesToAddress.sol`
