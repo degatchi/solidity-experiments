@@ -21,7 +21,7 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 # Bytes of Types
 To reduce gas costs, Solidity tightly packs variables where possible so that they are stored within the same 32 bytes. <br/>
 <br />
-Key:
+Key: <br />
 `bool`: 1 byte (8 bits) <br />
 `address`: 20 bytes <br />
 `uint8`: 1 bytes <br />
