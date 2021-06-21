@@ -24,7 +24,7 @@ To reduce gas costs, Solidity tightly packs variables where possible so that the
 Key: <br />
 `bool`: 1 byte (8 bits) <br />
 `address`: 20 bytes <br />
-`uint8`: 1 bytes <br />
+`uint8`: 1 byte <br />
 `uint256`: 32 bytes (uint8 * 32) <br />
 
 <br />
@@ -41,20 +41,20 @@ Canceling a param with a bool doesn't spend too much gas! (in our test it was a 
 <br />
 
 ### `bool && ()` trick (found 20/06/2020)
-For example: 
-`boolParam && (boolVariable = bool` 
-is the same as 
+For example: <br />
+`boolParam && (boolVariable = bool` <br />
+is the same as <br />
 `if (boolParam) {
     boolVariable = bool;
-}`
-however saves gas and is more compact. 
+}`<br />
+however saves gas and is more compact. <br />
 
 <br />
 
 ### `bool&&()Efficiency.sol`
-Tested what the most efficient way to do the `bool&&()` trick is.
-`test`: 26471
-`test2`: 26190
+Tested what the most efficient way to do the `bool&&()` trick is.<br />
+`test`: 26471<br />
+`test2`: 26190<br />
 
 <br />
 
@@ -90,5 +90,8 @@ Results: Ternary wins by being more compact and being ever so slightly less in g
 <br />
 
 ### `bitPackingParam.sol`
-Testing: whether bit packing in param makes a difference.
-Results: gas is saved when bit packing! (`test1`: 31,645, `test2`: 31,602)
+Testing: whether bit packing in param makes a difference. <br />
+Results: gas is saved when bit packing! (`test1`: 31,645, `test2`: 31,602) <br />
+
+<br />
+
