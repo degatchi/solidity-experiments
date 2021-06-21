@@ -68,4 +68,10 @@ address param: 26,391 <br />
 
 ### `ternaryVsIf.sol`
 Testing whether: using a ternary is more efficient than a single if statement. <br />
-Results: Ternary wins by being more compact and being ever so slightly less in gas (Ternary: 29,004 && If: 29,021)
+Results: Ternary wins by being more compact and being ever so slightly less in gas (Ternary: 29,004 && If: 29,021) <br />
+
+<br />
+
+### `bitPackingParam.sol`
+Testing: whether bit packing in param makes a difference.
+Results: gas is saved when bit packing! (`test1`: 31,645, `test2`: 31,602)
