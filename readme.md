@@ -10,11 +10,14 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 # Useful Information
 - https://ethereum.stackexchange.com/questions/37549/array-or-mapping-which-costs-more-gas
 - https://ethereum.stackexchange.com/questions/77099/efficient-bit-packing
+- https://ethereum.stackexchange.com/questions/15166/difference-between-require-and-assert-and-the-difference-between-revert-and-thro
 
 <br />
 
 # Notes
 - Clearing `address` variales in code: use `address(bytes20(''));`, this will set the address to `0x0000000000000000000000000000000000000000`. The reason we do this is because when you have an `address` or `bytes20` param, you are forced to input an address. However, you can set it with `address(bytes20(''));` within the code.
+- `calledFunctionExample{ value: msg.value } (param 1, param2)` is how you send ether to a specific function in a specific contract
+- `require()` at the bottom of the tx will revert he whole tx and nothing with get passed & the error message costs more gas the longer it is.
 
 <br />
 
