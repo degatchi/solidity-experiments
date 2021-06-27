@@ -18,6 +18,7 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 - Clearing `address` variales in code: use `address(bytes20(''));`, this will set the address to `0x0000000000000000000000000000000000000000`. The reason we do this is because when you have an `address` or `bytes20` param, you are forced to input an address. However, you can set it with `address(bytes20(''));` within the code.
 - `calledFunctionExample{ value: msg.value } (param 1, param2)` is how you send ether to a specific function in a specific contract
 - `require()` at the bottom of the tx will revert he whole tx and nothing with get passed & the error message costs more gas the longer it is.
+- `Stack too deep` is caused when a function is using more than 16 slots of storage. Each param, return variable and `storage` declaration is 1 variable.
 
 <br />
 
