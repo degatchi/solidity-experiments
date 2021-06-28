@@ -32,6 +32,8 @@ Key: <br />
 `uint256`: 32 bytes (uint8 * 32) <br />
 
 <br />
+`if`: approximately 45-50 gas <br />
+`if` are cheaper than `else if`: approximately 33 gas <br />
 
 # Findings
 ### `bytesToAddress.sol`
