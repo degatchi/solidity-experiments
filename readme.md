@@ -102,3 +102,12 @@ Results: gas is saved when bit packing! (`test1`: 31,645, `test2`: 31,602) <br /
 
 <br />
 
+### `updatingArray.sol`
+Testing: The gas difference between assigning an address array dynamically, with an address array into a fixed slot assignment and with a assinging a single address into a fixed slot array. <br />
+Results: <br />
+Array[] = 29,915 <br />
+Array[0] = 29,627 <br />
+Single = 28,549 <br />
+
+<br />
+
