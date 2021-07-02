@@ -11,6 +11,7 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 - https://ethereum.stackexchange.com/questions/37549/array-or-mapping-which-costs-more-gas
 - https://ethereum.stackexchange.com/questions/77099/efficient-bit-packing
 - https://ethereum.stackexchange.com/questions/15166/difference-between-require-and-assert-and-the-difference-between-revert-and-thro
+- https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices
 
 <br />
 
@@ -20,9 +21,11 @@ Go to remix, paste in `gasTestor.sol` and input your varaibles inbetween the `ga
 - `require()` at the bottom of the tx will revert he whole tx and nothing with get passed & the error message costs more gas the longer it is.
 - `Stack too deep` is caused when a function is using more than 16 slots of storage. Each param, return variable and `storage` declaration is 1 variable (strings count as 2 variables).
 - Dynamic arrays with no assigned value will not return anything when uint256: `0` is called, but instead it will revert. When you push or assign a value, it will assign it to the uint256: `0` position, making the length: `1`. When no address is assigned to an empty array, not even `0x000...` will be returned.
+- In public funcs, Solidity copies array arguments to memory, while external functions can read directly from calldata. Memory allocation is expensive, whereas reading from calldata is cheap. Public funcs may be called internally whereas external funcs don't. The gas difference is significant between the two, especailly when passing in large arrays.
 
 # Audit Notes
 - The "public" functions that are never called by the contract could be declared "external". When the inputsare arrays "external" functions are more efficient than "public" functions. Examples Functions like :quote(), getAmountIn(), getAmountOut(), getAmountsIn(), getAmountsOut().
+- The “DOMAIN_SEPARATOR” defined in L45 is listed as “public” yet follows the naming convention of “constant” and “immutable” variables and the “PERMIT_TYPEHASH” is declared as “public” correctly following the UPPER_CASE_FORMAT but being illegible for off-chain applications via its compiler-generated getter. 
 
 <br />
 
