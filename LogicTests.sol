@@ -22,25 +22,64 @@ contract Test {
         return array.length;
     }
 
-    event GasUsed(string topic, uint gasUsed);
+    event GasUsed(uint gasUsed);
 
-    // -------------------
+    // -----------------------------
     //  For Loop, + vs -
-    // -------------------
+    // -----------------------------
 
-    // 	25289 gas
+    // 	1832 gas used
     function forUp() external {
         uint gasStart = gasleft();
         for (uint i; i < 10; i++) {}
-        uint gasUsed = gasStart = gasleft();
-        emit GasUsed('test1', gasUsed);
+        uint gasUsed = gasStart - gasleft();
+        emit GasUsed(gasUsed);
     }
 
-    // 25209 gas
+
+    // 1840 gas used
     function forDown() external {
         uint gasStart = gasleft();
         for (uint i = 10; i > 0; i--) {}
-        uint gasUsed = gasStart = gasleft();
-        emit GasUsed('test1', gasUsed);
+        uint gasUsed = gasStart - gasleft();
+        emit GasUsed(gasUsed);
     }
+
+
+    // -----------------------------
+    //  Optinal SSTORE
+    //  - Check if SSTORE is worth updating w/o of optinal if statement
+    // -----------------------------
+
+    uint ref0;
+    uint ref1;
+
+    // 4449 gas used
+    function forceSSTORE() external {
+        uint gasStart = gasleft();
+        
+        uint number = 10;
+        if (number > 11) {}
+        ref0 = number;
+        ref1 = number;
+
+        uint gasUsed = gasStart - gasleft();
+        emit GasUsed(gasUsed);
+    }
+
+    // 4475 gas used
+    function optinalSSTORE() external {
+        uint gasStart = gasleft();
+        
+        uint number = 10;
+        if (number > 11) {}
+        if (number > 9) {
+            ref0 = number;
+            ref1 = number;
+        }
+
+        uint gasUsed = gasStart - gasleft();
+        emit GasUsed(gasUsed);
+    }
+    
 }
