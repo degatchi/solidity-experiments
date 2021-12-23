@@ -26,6 +26,7 @@ contract Test {
 
     // -----------------------------
     //  For Loop, + vs -
+    //  - small gas diff, however starting from the top may be more gas efficient in some instances, i.e, minting from `i` + going down
     // -----------------------------
 
     // 	1832 gas used
@@ -81,5 +82,4 @@ contract Test {
         uint gasUsed = gasStart - gasleft();
         emit GasUsed(gasUsed);
     }
-    
 }
