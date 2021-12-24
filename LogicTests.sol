@@ -130,6 +130,9 @@ contract Test {
     //  Rounding
     // -----------------------------
 
+    // daysPassed1 === 1
+    // daysPassed2 === 1
+    // daysPassed1 === 0
     function round() external pure returns(uint daysPassed1, uint daysPassed2, uint daysPassed3) {
         uint256 timePassed = 90000;
         daysPassed1 = timePassed < 1 days ? 0 : timePassed / 86400;
